@@ -1,0 +1,6 @@
+<%= form_for @user, url: {action: "update"} do |f| %>
+Username: <%= f.text_field :username %><br>
+Email: <%= f.text_field :email %><br>
+Password: <%= f.text_field :password %><br>
+<%= f.submit 'Edit' %>
+<% end %>
