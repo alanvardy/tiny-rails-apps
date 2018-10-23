@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1 {
+    padding-top: 50px;
+}
+
+#logo {
+    font-size: 2em;
+    color: white;
+    line-height: 50px;
+    vertical-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+}
