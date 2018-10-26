@@ -1,0 +1,18 @@
+Started GET "/" for 127.0.0.1 at 2018-10-26 13:34:52 -0600
+Processing by ApplicationController#hello as HTML
+Completed 500 Internal Server Error in 76ms
+
+
+  
+ActionView::MissingTemplate (Missing template application/hello with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/vardy/coding/tiny-rails-apps/hartl-hello_app/app/views"
+):
+  
+app/controllers/application_controller.rb:5:in `hello'
+Started GET "/" for 127.0.0.1 at 2018-10-26 13:35:32 -0600
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms)
+
+
