@@ -1,0 +1,1000 @@
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:36:27 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vardy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vardy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:40:14 -0600
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20181026143813)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181026143813_create_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181026143813"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-26 14:40:38.390258"], ["updated_at", "2018-10-26 14:40:38.390258"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:40:42 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vardy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vardy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vardy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:41:43 -0600
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:41:45 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:41:47 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:41:54 -0600
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 860ms (Views: 859.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:43:17 -0600
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (175.9ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts_index_path' for #<#<Class:0x00007f0d28058818>:0x0000561b1d104c38>
+Did you mean?  posts_path):
+    1: <h1>Markdown Blog</h1>
+    2: <p><%= link_to 'View all posts', posts_index_path %></p>
+  
+app/views/static/index.html.erb:2:in `_app_views_static_index_html_erb__2865642084902064213_47337225957440'
+Started GET "/" for 127.0.0.1 at 2018-10-26 08:44:03 -0600
+Processing by StaticController#index as HTML
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:44:05 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:44:08 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-26 08:44:20 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms)
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-26 08:45:20 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FEnDPrG7dxYFLu16pTHplwLaVMiwKYBrs7OgYElITQOK8BzC5qXKXgzKMqL/EkzhSbxhRv1m67QWOn5mtwQ+9Q==", "post"=>{"title"=>"##Test##", "content"=>"Hi Guys!\r\n'See this code' I wonder if it works!\r\n\r\n'''ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "##Test##"], ["content", "Hi Guys!\r\n'See this code' I wonder if it works!\r\n\r\n'''ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"], ["created_at", "2018-10-26 14:45:20.774772"], ["updated_at", "2018-10-26 14:45:20.774772"]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 08:45:20 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+     7: 
+     8: <p>
+     9:   <strong>Content:</strong>
+    10:   <%= markdown(@post.content) %>
+    11: </p>
+    12: 
+    13: <%= link_to 'Edit', edit_post_path(@post) %> |
+  
+app/helpers/posts_helper.rb:4:in `block_code'
+app/helpers/posts_helper.rb:19:in `render'
+app/helpers/posts_helper.rb:19:in `markdown'
+app/views/posts/show.html.erb:10:in `_app_views_posts_show_html_erb___3069677079001694640_69847047007840'
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-26 08:46:52 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.2ms)
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-26 08:47:13 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mPZsxij/DaIVht+yJn6X/6AZbZ5gR9wMKOCTZeGQDxAwPxDCL7OxlCFUHe+FdFAnSkyRMgekW2ZXuOOBpEJG6Q==", "post"=>{"title"=>"###Title###", "content"=>"asdafjhasdfk\r\n`adsf`"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "###Title###"], ["content", "asdafjhasdfk\r\n`adsf`"], ["created_at", "2018-10-26 14:47:13.974298"], ["updated_at", "2018-10-26 14:47:13.974298"]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-10-26 08:47:13 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-26 08:47:23 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.1ms)
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-26 08:47:28 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rzCZR8clpAdZUSYeXrSmnw+g8Hd+RwcQkENa+kjlyGIH+eVDwGkYMW2D5EP9vmFH5fUM2xmkgHrvGyoeDTeBmw==", "post"=>{"title"=>"Title", "content"=>"asdafjhasdfk\r\n`adsf`"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title"], ["content", "asdafjhasdfk\r\n`adsf`"], ["created_at", "2018-10-26 14:47:28.695478"], ["updated_at", "2018-10-26 14:47:28.695478"]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2018-10-26 08:47:28 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-26 08:47:30 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.3ms)
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-26 08:47:51 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mQHDWLekACYM+y0LGYTrU2C+b1dGk+c0xRWu8SytMWUxyL9csOi8EDgp71a6jiyLiuuT+yFwYF66Td4VaX94nA==", "post"=>{"title"=>"Title", "content"=>"asdafjhasdfk\r\n`adsf`\r\n\r\n[This is a link](http://www.google.com)"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title"], ["content", "asdafjhasdfk\r\n`adsf`\r\n\r\n[This is a link](http://www.google.com)"], ["created_at", "2018-10-26 14:47:51.458615"], ["updated_at", "2018-10-26 14:47:51.458615"]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2018-10-26 08:47:51 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:48:05 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:4:in `block_code'
+app/helpers/posts_helper.rb:19:in `render'
+app/helpers/posts_helper.rb:19:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69846974763100'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69846974763100'
+Started GET "/posts/4" for 127.0.0.1 at 2018-10-26 08:48:09 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:48:11 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:4:in `block_code'
+app/helpers/posts_helper.rb:19:in `render'
+app/helpers/posts_helper.rb:19:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847076560940'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847076560940'
+Started GET "/posts/4" for 127.0.0.1 at 2018-10-26 08:49:28 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-26 08:49:31 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-26 08:49:52 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"noGhnwdKfVeyTSSsd4AL0KmCHISsyFKtXGaScezQijg2SN2bAAbBYYaf5vHUiswIQ9fgKMsr1ccjPuKVqQLDwQ==", "post"=>{"title"=>"Title", "content"=>"``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title"], ["content", "``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```"], ["created_at", "2018-10-26 14:49:52.493815"], ["updated_at", "2018-10-26 14:49:52.493815"]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-10-26 08:49:52 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:50:07 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:4:in `block_code'
+app/helpers/posts_helper.rb:19:in `render'
+app/helpers/posts_helper.rb:19:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847082274300'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847082274300'
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:50:10 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:4:in `block_code'
+app/helpers/posts_helper.rb:19:in `render'
+app/helpers/posts_helper.rb:19:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847052220760'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847052220760'
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:50:52 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:6:in `block_code'
+app/helpers/posts_helper.rb:21:in `render'
+app/helpers/posts_helper.rb:21:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847081394080'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847081394080'
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:50:53 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:6:in `block_code'
+app/helpers/posts_helper.rb:21:in `render'
+app/helpers/posts_helper.rb:21:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847048806180'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847048806180'
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:51:03 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:6:in `block_code'
+app/helpers/posts_helper.rb:21:in `render'
+app/helpers/posts_helper.rb:21:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69846974971040'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69846974971040'
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:51:04 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:6:in `block_code'
+app/helpers/posts_helper.rb:21:in `render'
+app/helpers/posts_helper.rb:21:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847107644820'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847107644820'
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:51:33 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-10-26 08:51:48 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.3ms)
+  Rendered posts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-10-26 08:51:53 -0600
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fA9Gq4O01CMulkZYrJKrmJn0raAbzTH3DrA8DX5IZjjiBV/3P2bPW0LnsRVa5ZtpvmkXMSxA/w0XeCteZXotlw==", "post"=>{"title"=>"##Test##", "content"=>"Hi Guys!I wonder if it works!\r\n\r\n'''ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Hi Guys!I wonder if it works!\r\n\r\n'''ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"], ["updated_at", "2018-10-26 14:51:53.620528"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 9ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 08:51:53 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-10-26 08:51:59 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-10-26 08:52:06 -0600
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"muQp1VNj4HLw8VvR1Yn8pNDYVAOJUUth225GR8nBDYME7jCJ77H7CpyArJwj/sxV90Xukr7chZvCplEU0vNGLA==", "post"=>{"title"=>"##Test##", "content"=>"Hi Guys!I wonder if it works!\r\n\r\n''' ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Hi Guys!I wonder if it works!\r\n\r\n''' ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"], ["updated_at", "2018-10-26 14:52:06.242589"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 9ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 08:52:06 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-10-26 08:52:08 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.2ms)
+  Rendered posts/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-10-26 08:52:10 -0600
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4iVaHINkl5F5f3KSev0c0WZx+1sSwYk5/0VBsschyPh8L0NAP7aM6RUOhd+MiiwgQexByiVMR8PmjVbh3BODVw==", "post"=>{"title"=>"##Test##", "content"=>"Hi Guys!I wonder if it works!\r\n\r\n''' ruby\r\n\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n\r\n\r\n```\r\n\r\nHuh?"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 08:52:10 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:52:12 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-26 08:52:21 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.1ms)
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-10-26 08:53:21 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mJHmg2fE6TUlUOu0W3ux/sv9E0B4IAoKu24JxoZkrmsGKDl/MNpUfSy0NGwBWBSIgJsmzjVvYdUe59fAeCjdnQ==", "post"=>{"title"=>"Link and code", "content"=>"[This is a link](http://www.google.com/)\r\n``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Link and code"], ["content", "[This is a link](http://www.google.com/)\r\n``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```"], ["created_at", "2018-10-26 14:53:21.336485"], ["updated_at", "2018-10-26 14:53:21.336485"]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2018-10-26 08:53:21 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2018-10-26 08:53:31 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2018-10-26 08:53:38 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2018-10-26 08:53:40 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/6/edit" for 127.0.0.1 at 2018-10-26 08:53:45 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/6" for 127.0.0.1 at 2018-10-26 08:53:53 -0600
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2hKTtFQNACK7OxkRvF80VZ2na0zCyvT/6ZnwW7VsAH//oy9EezDRW0pNsIIW4qWW+R/5sXebX6movgPm/JEMgA==", "post"=>{"title"=>"Link and code", "content"=>"[This is a link](http://www.google.com/)\r\n\r\n``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```\r\n"}, "commit"=>"Update Post", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "[This is a link](http://www.google.com/)\r\n\r\n``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```\r\n"], ["updated_at", "2018-10-26 14:53:53.723672"], ["id", 6]]
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 8ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2018-10-26 08:53:53 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/6/edit" for 127.0.0.1 at 2018-10-26 08:53:58 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2018-10-26 08:54:01 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Symbol or String expected, but NilClass given.):
+    15:     <% @posts.each do |post| %>
+    16:       <tr>
+    17:         <td><%= markdown(post.title) %></td>
+    18:         <td><%= markdown(post.content) %></td>
+    19:         <td><%= link_to 'Show', post %></td>
+    20:         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    21:         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/helpers/posts_helper.rb:6:in `block_code'
+app/helpers/posts_helper.rb:21:in `render'
+app/helpers/posts_helper.rb:21:in `markdown'
+app/views/posts/index.html.erb:18:in `block in _app_views_posts_index_html_erb__2262283861386775658_69847050633360'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__2262283861386775658_69847050633360'
+Started GET "/posts/" for 127.0.0.1 at 2018-10-26 08:54:12 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-10-26 08:54:16 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-10-26 08:54:27 -0600
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9KWUn4cirg3NgMLxoZEXYke/nRQXexvnGujtS4PzJYh2I8Ows6RwFtH9EYw8XSsroNE5WfQIpWFo7TmNT2HOQ==", "post"=>{"title"=>"##Test##", "content"=>"Hi Guys!I wonder if it works!\r\n\r\n''' ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```\r\n\r\nHuh?"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Hi Guys!I wonder if it works!\r\n\r\n''' ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```\r\n\r\nHuh?"], ["updated_at", "2018-10-26 14:54:27.959710"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 8ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 08:54:27 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-10-26 08:54:29 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-10-26 08:54:41 -0600
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n+oEYwz0ViN3tDSo7IiuQk6gTJLPzzYgOEO58QuevzAB4B0/sCZNWxvFw+Ua/56zaT32A/hC+Nohi66iEKz0nw==", "post"=>{"title"=>"##Test##", "content"=>"Hi Guys!I wonder if it works!\r\n\r\n``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```\r\n\r\nHuh?"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Hi Guys!I wonder if it works!\r\n\r\n``` ruby\r\nmodule PostsHelper\r\n  class CodeRayify < Redcarpet::Render::HTML\r\n    def block_code(code, language)\r\n      CodeRay.scan(code, language).div\r\n    end\r\n  end\r\n\r\n  def markdown(text)\r\n    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)\r\n    options = {\r\n      fenced_code_blocks: true,\r\n      no_intra_emphasis: true,\r\n      autolink: true,\r\n      strikethrough: true,\r\n      lax_html_blocks: true,\r\n      superscript: true\r\n    }\r\n    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)\r\n    markdown_to_html.render(text).html_safe\r\n  end\r\nend\r\n```\r\n\r\nHuh?"], ["updated_at", "2018-10-26 14:54:41.083452"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:44
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:44
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 08:54:41 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 08:54:44 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-10-26 09:11:37 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:11:48 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:13:55 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:13:58 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:14:11 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:14:12 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:14:14 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-10-26 09:14:24 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
